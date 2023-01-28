@@ -16,6 +16,7 @@ class _HomePageState extends State<HomePage> {
     return SingleChildScrollView(
         child: SafeArea(
             child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
           padding: const EdgeInsets.all(16),
@@ -105,6 +106,55 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.deepOrange,
                 borderRadius: BorderRadius.circular(16)),
           ),
+        ),
+
+        // Text Transaksi
+        Padding(
+          padding: const EdgeInsets.only(left: 22, top: 20),
+          child: Text("TRANSAKSI",
+              style: GoogleFonts.montserrat(
+                  color: Colors.deepOrange,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold),
+              textAlign: TextAlign.left),
+        ),
+
+        // List Transaksi
+        Padding(
+          padding: const EdgeInsets.all(16),
+          child: Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+              color: Colors.deepOrange,
+              elevation: 5,
+              child: ListTile(
+                  trailing: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.delete, color: Colors.white),
+                      SizedBox(width: 10),
+                      Icon(Icons.edit, color: Colors.white),
+                    ],
+                  ),
+                  // title color
+                  title: Text("Rp. 100.000",
+                      style: GoogleFonts.montserrat(
+                          color: Colors.white,
+                          // fontSize: 12,
+                          fontWeight: FontWeight.bold)),
+                  subtitle: Text("Coffe Shop",
+                      style: GoogleFonts.montserrat(
+                          color: Colors.white,
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold)),
+                  leading: Container(
+                    child: Icon(Icons.upload, color: Colors.deepOrange),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                  ))),
         )
       ],
     )));
